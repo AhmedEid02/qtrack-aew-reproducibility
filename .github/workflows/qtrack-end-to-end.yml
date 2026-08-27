@@ -1,0 +1,57 @@
+name: qtrack-official-example
+
+on:
+  workflow_dispatch:
+
+jobs:
+  qtrack:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+
+    defaults:
+      run:
+        working-directory: qtrack-aew-reproducibility
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install QTrack and dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Confirm QTrack version
+        run: |
+          python -c "import qtrack; print('QTrack version:', qtrack.__version__)"
+
+      - name: Run official ERA5 10-day QTrack example
+        run: |
+          python scripts/run_qtrack_demo.py --case era5_2010_10day --jobs 2
+
+      - name: Summarize detected AEW tracks
+        run: |
+          python scripts/summarize_tracks.py \
+            outputs/qtrack_run/AEW_tracks_post_processed.nc \
+            --csv outputs/aew_track_summary.csv
+
+      - name: Plot AEW longitude-time tracks
+        run: |
+          python scripts/plot_tracks.py \
+            outputs/qtrack_run/AEW_tracks_post_processed.nc \
+            --out figures/aew_longitude_time.png
+
+      - name: Upload QTrack scientific results
+        uses: actions/upload-artifact@v4
+        with:
+          name: qtrack-era5-10day-results
+          path: |
+            qtrack-aew-reproducibility/outputs/aew_track_summary.csv
+            qtrack-aew-reproducibility/outputs/qtrack_run/AEW_tracks_post_processed.nc
+            qtrack-aew-reproducibility/outputs/qtrack_run/final_hovmoller.png
+            qtrack-aew-reproducibility/figures/aew_longitude_time.png

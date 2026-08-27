@@ -6,7 +6,7 @@
 
 > **Reproduction status: PASS ✅**  
 > Official ERA5 example downloaded and processed successfully in GitHub Actions on 27 August 2026.  
-> Successful run: https://github.com/AhmedEid02/qtrack-aew-reproducibility/actions/runs/33070652829
+> Successful run: https://github.com/AhmedEid02/qtrack-aew-reproducibility/actions/runs/33085165852
 
 ## Verified experiment
 

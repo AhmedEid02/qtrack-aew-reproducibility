@@ -8,10 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 90
 
-    defaults:
-      run:
-        working-directory: qtrack-aew-reproducibility
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -51,7 +47,7 @@ jobs:
         with:
           name: qtrack-era5-10day-results
           path: |
-            qtrack-aew-reproducibility/outputs/aew_track_summary.csv
-            qtrack-aew-reproducibility/outputs/qtrack_run/AEW_tracks_post_processed.nc
-            qtrack-aew-reproducibility/outputs/qtrack_run/final_hovmoller.png
-            qtrack-aew-reproducibility/figures/aew_longitude_time.png
+            outputs/aew_track_summary.csv
+            outputs/qtrack_run/AEW_tracks_post_processed.nc
+            outputs/qtrack_run/final_hovmoller.png
+            figures/aew_longitude_time.png

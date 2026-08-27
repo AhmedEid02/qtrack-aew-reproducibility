@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+title: "Reproducible African Easterly Wave Tracking with QTrack"
+message: "If you reuse this repository, please cite this repository and the original QTrack method paper."
+type: software
+authors:
+  - family-names: Ismail
+    given-names: Ahmed Hussein
+    orcid: "https://orcid.org/0009-0001-4542-7150"
+version: 0.1.0
+date-released: 2026-08-27
+repository-code: "https://github.com/AhmedEid02/qtrack-aew-reproducibility"
+references:
+  - type: article
+    authors:
+      - family-names: Lawton
+        given-names: Quinton A.
+    title: "The Influence of Convectively Coupled Kelvin Waves on African Easterly Waves in a Wave-Following Framework"
+    year: 2022
+    doi: "10.1175/MWR-D-21-0321.1"

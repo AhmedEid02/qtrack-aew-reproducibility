@@ -1,0 +1,19 @@
+name: aew-qtrack
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+  - numpy
+  - pandas
+  - scipy
+  - xarray
+  - netcdf4
+  - matplotlib
+  - cartopy
+  - scikit-learn
+  - joblib
+  - dill
+  - pytest
+  - pip:
+      - qtrack==0.0.4

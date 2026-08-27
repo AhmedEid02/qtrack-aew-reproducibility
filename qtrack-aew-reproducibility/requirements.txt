@@ -1,8 +1,0 @@
-qtrack==0.0.4
-gdown>=5.2
-xarray>=2024.1
-pandas>=2.0
-numpy==1.26.4
-scipy>=1.10
-matplotlib>=3.7
-pytest>=8.0

@@ -1,3 +1,0 @@
-system,n_valid_steps,duration_days,start_lon,start_lat,end_lon,end_lat,westward_displacement_deg,direct_displacement_km,mean_direct_speed_ms,crosses_0E,crosses_20W,max_strength_s-1
-1,13,3.0,20.0,11.0,-40.0,17.0,60.0,6485.038649951527,25.0194392359241,True,True,3.5e-06
-2,11,2.5,30.0,9.0,-20.0,14.0,50.0,5467.089040959459,25.31059741184935,True,True,3.5e-06
